@@ -4,15 +4,20 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 
-import com.vpresa.filemkondang.view.activity.MainActivity;
-import com.vpresa.filemkondang.view.activity.SplashActivity;
-
-/**
- * Created by Dwicandra on 9/1/2017.
- */
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 public class CommonFunction {
+    public static void setImage(Context context, String url, ImageView imageView) {
+        Glide.with(context)
+                .load(url)
+                .dontAnimate()
+                .diskCacheStrategy(DiskCacheStrategy.RESULT)
+                .centerCrop()
+                .into(imageView);
+    }
 
     public static void moveActivity(Context from, Class dest, boolean isFinished) {
         moveActivity(from, dest, new Bundle(), isFinished);
@@ -22,6 +27,6 @@ public class CommonFunction {
         Intent i = new Intent(from, dest);
         i.putExtras(bundle);
         from.startActivity(i);
-        if(isFinished) ((Activity) from).finish();
+        if (isFinished) ((Activity) from).finish();
     }
 }

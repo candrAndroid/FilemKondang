@@ -20,11 +20,11 @@
         android:title="Top Rated" />
     <item
         android:id="@+id/nav_coming_soon"
-        android:icon="@drawable/ic_releasedate"
+        android:icon="@drawable/ic_date"
         android:title="Coming Soon" />
     <item
         android:id="@+id/nav_about"
-        android:icon="@drawable/ic_about"
+        android:icon="@drawable/ic_info"
         android:title="About" />
 
 </menu>
